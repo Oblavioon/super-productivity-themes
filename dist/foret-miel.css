@@ -1,0 +1,139 @@
+/* Les commentaires de ce thème sont en français pour le fun et peut être aider la communauté Française à s'investir d'avantage dans SuperProductivity, 
+j'ai été charmé par cette communauté Opensource et gratuite ! Mereci beaucoup :) */
+
+/* === Forêt Miel — Super Productivity — Fait avec <3 par OnzeBleu === */
+:root, body, body.isLightTheme, body.isDarkTheme {
+  /* Palette */
+  --canvas: #fcf8ec;
+  --honey: #fdca89;
+  --amber: #cbb27a;
+  --jade: #2a7f5e;
+  --bark: #4a401d;
+  --evergreen: #132f20;
+
+  /* Surfaces */
+  --surface-0: #0c2016;   
+  --surface-1: #132f20;   
+  --surface-2: #4a401d;   
+  --surface-3: #5a4f26;   
+  --surface-4: #1c4030;   
+
+  /* Encre (texte) */
+  --ink: #fcf8ec;
+  --ink-strong: #ffffff;
+  --ink-muted: #cbb27a;
+  --ink-on-channel: 252, 248, 236;   
+
+  /* États */
+  --state-hover-alpha: 0.08;
+  --state-focus-alpha: 0.12;
+  --state-pressed-alpha: 0.12;
+  --state-selected-alpha: 0.16;
+
+  /* Lignes et voile */
+  --separator: rgba(203, 178, 122, .25);  
+  --divider: rgba(252, 248, 236, .12);   
+  --scrim: rgba(12, 32, 22, .7);         
+
+}
+
+/* Fond : Evergreen avec halo Jade */
+body, body.isLightTheme,
+.mat-drawer-container, .mat-sidenav-content {
+  background:
+    radial-gradient(circle at 85% 0%, rgba(42, 127, 94, .45) 0%, transparent 50%),
+    radial-gradient(circle at 0% 100%, rgba(74, 64, 29, .5) 0%, transparent 50%),
+    linear-gradient(160deg, #1c4030 0%, #132f20 50%, #0c2016 100%) !important;
+  background-attachment: fixed !important;
+  color: #fcf8ec !important;
+}
+
+/* Barre du haut : Jade */
+body mat-toolbar, body .mat-toolbar {
+  background: linear-gradient(90deg, #2a7f5e, #1f6a4d) !important;
+  color: #fcf8ec !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .3);
+}
+
+/* Menu latéral */
+body .mat-drawer, body .mat-sidenav {
+  background: rgba(12, 32, 22, .9) !important;
+  color: #fcf8ec !important;
+  border-right: 1px solid rgba(203, 178, 122, .35) !important;
+}
+
+/* Tâches : Bark + liseré Honey */
+body task, body .task,
+body.isLightTheme task, body.isLightTheme .task {
+  background: #4a401d !important;
+  color: #fcf8ec !important;
+  border-radius: 14px !important;
+  margin: 6px 0 !important;
+  border: 1px solid rgba(203, 178, 122, .3) !important;
+  border-left: 4px solid #fdca89 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .35) !important;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+body task:hover, body .task:hover,
+body.isLightTheme task:hover, body.isLightTheme .task:hover {
+  background: #5a4f26 !important;
+  transform: translateX(3px);
+  box-shadow: 0 0 12px rgba(253, 202, 137, .25) !important;
+}
+
+/* Tâche en cours : liseré Jade lumineux */
+body task.isCurrent, body .task.isCurrent {
+  border-left-color: #3fae82 !important;
+  box-shadow: 0 0 0 1px #3fae82, 0 0 14px rgba(63, 174, 130, .4) !important;
+}
+
+/* Tâches terminées */
+body task.isDone, body .task.isDone { opacity: .6; filter: saturate(.5); }
+
+/* Boutons pleins : Honey → Amber */
+body .mat-mdc-raised-button, body .mat-mdc-unelevated-button, body .mat-mdc-fab {
+  background: linear-gradient(135deg, #fdca89, #cbb27a) !important;
+  color: #132f20 !important;
+  border-radius: 999px !important;
+}
+
+/* Barre de progression */
+body .mat-mdc-progress-bar .mdc-linear-progress__bar-inner {
+  border-color: #fdca89 !important;
+}
+
+/* Liens et icônes */
+body a, body .mat-icon { color: #fdca89; }
+
+/* Barre de défilement */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#fdca89, #2a7f5e);
+  border-radius: 8px;
+}
+
+/* Icônes dans les boutons pleins (play, etc.) */
+body .mat-mdc-raised-button .mat-icon,
+body .mat-mdc-unelevated-button .mat-icon,
+body .mat-mdc-fab .mat-icon,
+body .mat-mdc-mini-fab .mat-icon {
+  color: #132f20 !important;
+}
+
+body .mat-mdc-mini-fab {
+  background: linear-gradient(135deg, #fdca89, #cbb27a) !important;
+  border-radius: 999px !important;
+}
+
+/* Signature visible */
+body::after {
+  content: "Forêt Miel · fait avec <3 par Onzebleu";
+  position: fixed;
+  bottom: 8px;
+  right: 12px;
+  font-size: 10px;
+  letter-spacing: .5px;
+  color: rgba(253, 202, 137, .45);
+  pointer-events: none;
+  z-index: 9999;
+}
